@@ -20,7 +20,7 @@
                 [(ngModel)]="model.hamburger" name="hamburgers"
                 #hamburger="ngModel"
                 >
-          <option *ngFor="let hamburger of hamburgers" [value]="hamburger.id" >{{hamburger.name}}</option>
+          <option *ngFor="let hamburger of hamburgers" [ngValue]="hamburger" >{{hamburger.name}}</option>
         </select>
         TODO: remove this: {{model.hamburger.id}}
       </div>
@@ -33,7 +33,7 @@
                 [(ngModel)]="model.friet" name="frieten"
                 #frieten="ngModel"
                 >
-          <option *ngFor="let friet of fries" [value]="friet.id" >{{friet.name}}</option>
+          <option *ngFor="let friet of fries" [ngValue]="friet" >{{friet.name}}</option>
         </select>
         TODO: remove this: {{model.hamburger.id}}
       </div>

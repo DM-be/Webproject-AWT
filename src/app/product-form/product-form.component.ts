@@ -20,10 +20,16 @@ export class ProductFormComponent implements OnInit {
   selectedFries = new Product("none", 0, 0)
   selectedHamburger = new Product("none", 0, 0)
   model = new Order("no name yet", "no email", this.selectedHamburger, this.selectedFries);
+ 
   
+
   
 
   constructor() { }
+
+  stringify(o:any):string {
+    return JSON.stringify(o);
+  }
 
   ngOnInit() {
     console.log(this.model);
@@ -31,7 +37,10 @@ export class ProductFormComponent implements OnInit {
 
   logObject()
   {
-    console.log(this.model);
+    console.log(this.model)
+    var string = JSON.stringify(this.model)
+    JSON.parse(string)
+    console.log(string)
   }
 
   get diagnostic() { return JSON.stringify(this.model);
