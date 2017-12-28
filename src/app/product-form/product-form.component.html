@@ -37,6 +37,27 @@
         </select>
         TODO: remove this: {{model.hamburger.id}}
       </div>
+    </div>
+
+    <div class="form-row">
+      
+        <div class="form-group col-md-6">
+            <label for="snacks">Select your snacks</label>
+            <select class="form-control" id="snacks"
+                    required
+                    [(ngModel)]="model.snack" name="snacks"
+                    #snack="ngModel"
+                    (blur)="updatePrice()"
+                    >
+              <option *ngFor="let snack of snacks" [ngValue]="snack"  >{{snack.name}}</option>
+            </select>
+       
+          </div>
+
+       
+       
+  
+</div>
       
       <button type="button" class="btn btn-success" (click) ="logObject()">Submit</button>
 
