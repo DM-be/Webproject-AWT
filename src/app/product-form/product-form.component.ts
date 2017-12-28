@@ -23,20 +23,21 @@ export class ProductFormComponent implements OnInit {
   sauces = SAUCES;
 
   price:number;
-
+  en: any;
 
   selectedFries = new Product("none", 0, 0)
   selectedHamburger = new Product("none", 0, 0)
   selectedSnack = new Product("none", 0, 0)
   selectedSauce = new Product("none", 0, 0)
 
-  model = new Order("empty firstname", "empty lastname", "no email", this.selectedHamburger, this.selectedFries, this.selectedSnack, this.selectedSauce);
- 
+  model = new Order("", "",  this.selectedHamburger, this.selectedFries, this.selectedSnack, this.selectedSauce);
+  
   
   constructor() { }
 
   ngOnInit() {
     console.log(this.model);
+    
   }
 
   updatePrice() :void
