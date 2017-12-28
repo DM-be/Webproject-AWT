@@ -6,37 +6,56 @@
 <div class="container">
     <h1>productForm</h1>
     <form (ngSubmit)="onSubmit()" #productForm="ngForm">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name"
-              [(ngModel)]="model.name" name="name">
-              TODO: remove this: {{model.name}}
-      </div>
+
+      <div class="form-row">
+      
+    
+      <div class="form-group col-md-4">
+          <label for="name">Lastname</label>
+          <input type="text" class="form-control" id="name"
+                required
+                [(ngModel)]="model.lastName" name="name">
+           <label for="name">Firstname</label>
+          <input type="text" class="form-control" id="name"
+              required
+              [(ngModel)]="model.firstName" name="name">
+
+     
+        </div>
  
-      <div class="form-group">
+        </div>
+
+
+      <div class="form-row">
+
+      <div class="form-group col-md-6">
         <label for="hamburgers">Select your burger</label>
         <select class="form-control" id="hamburgers"
                 required
                 [(ngModel)]="model.hamburger" name="hamburgers"
                 #hamburger="ngModel"
+                (blur)="updatePrice()"
                 >
-          <option *ngFor="let hamburger of hamburgers" [ngValue]="hamburger" >{{hamburger.name}}</option>
+          <option *ngFor="let hamburger of hamburgers" [ngValue]="hamburger"  >{{hamburger.name}}</option>
         </select>
         TODO: remove this: {{model.hamburger.id}}
       </div>
 
 
-      <div class="form-group">
+      <div class="form-group col-md-6">
         <label for="frieten">Select your french fries</label>
         <select class="form-control" id="hamburgers"
                 required
                 [(ngModel)]="model.friet" name="frieten"
                 #frieten="ngModel"
+                (blur)="updatePrice()"
                 >
           <option *ngFor="let friet of fries" [ngValue]="friet" >{{friet.name}}</option>
         </select>
-        TODO: remove this: {{model.hamburger.id}}
+        
       </div>
+
+
     </div>
 
     <div class="form-row">
@@ -49,16 +68,29 @@
                     #snack="ngModel"
                     (blur)="updatePrice()"
                     >
-              <option *ngFor="let snack of snacks" [ngValue]="snack"  >{{snack.name}}</option>
+              <option *ngFor="let snack of snacks" [ngValue]="snack" >{{snack.name}}</option>
             </select>
        
           </div>
 
-       
-       
+           <div class="form-group col-md-6">
+        <label for="sauces">Select your sauce</label>
+        <select class="form-control" id="sauces"
+                required
+                [(ngModel)]="model.sauce" name="sauces"
+                #sauce="ngModel"
+                (blur)="updatePrice()"
+                >
+          <option *ngFor="let sauce of sauces" [ngValue]="sauce" >{{sauce.name}}</option>
+        </select>
+      
+      </div>
+    
   
 </div>
-      
+
+
+
       <button type="button" class="btn btn-success" (click) ="logObject()">Submit</button>
 
     </form>

@@ -3,10 +3,16 @@ import { Product } from "./product";
 export class Order {
 
     constructor (
-        public name: string,
+        public firstName: string,
+        public lastName: string,
         public email: String,
         public hamburger: Product,
         public friet: Product,
-        ) { }
+        public snack: Product,
+        public sauce: Product
+        ) {
+
+
+         }
 
 }
