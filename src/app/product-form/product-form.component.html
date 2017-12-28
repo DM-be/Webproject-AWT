@@ -7,45 +7,55 @@
     <h1>productForm</h1>
     <form (ngSubmit)="onSubmit()" #productForm="ngForm">
 
-      <div class="form-row">
+      <div class="form-group row">
       
-    
-      <div class="form-group col-md-4">
-          <label for="name">Lastname</label>
-          <input type="text" class="form-control" id="name"
+      
+          <label for="firstName" class="col-sm-2 col-form-label">Voornaam</label>
+          <div class="col-sm-10">
+          <input type="text" class="form-control" id="firstName"
                 required
-                [(ngModel)]="model.lastName" name="name">
-           <label for="name">Firstname</label>
-          <input type="text" class="form-control" id="name"
-              required
-              [(ngModel)]="model.firstName" name="name">
+                [(ngModel)]="model.firstName" name="name">
+            </div>
+      </div>     
 
-     
-        </div>
- 
-        </div>
+      <div class="form-group row">
+        
+        
+            <label for="lastName" class="col-sm-2 col-form-label">Achternaam</label>
+            <div class="col-sm-10">
+            <input type="text" class="form-control" id="name"
+                  required
+                  [(ngModel)]="model.firstName" name="name">
+            </div>
 
-
-      <div class="form-row">
-
-      <div class="form-group col-md-6">
-        <label for="hamburgers">Select your burger</label>
-        <select class="form-control" id="hamburgers"
-                required
+        </div>     
+  
+        <div class="form-group row">
+          
+          
+              <label for="hamburgers" class="col-sm-2 col-form-label">Kies je bosburger</label>
+              <div class="col-sm-10">
+                <select class="form-control" id="hamburgers"
+                
                 [(ngModel)]="model.hamburger" name="hamburgers"
                 #hamburger="ngModel"
                 (blur)="updatePrice()"
                 >
-          <option *ngFor="let hamburger of hamburgers" [ngValue]="hamburger"  >{{hamburger.name}}</option>
-        </select>
-        TODO: remove this: {{model.hamburger.id}}
-      </div>
+            <option *ngFor="let hamburger of hamburgers" [ngValue]="hamburger"  >{{hamburger.name}}</option>
+            </select>
+  
+          </div>     
 
-
-      <div class="form-group col-md-6">
-        <label for="frieten">Select your french fries</label>
-        <select class="form-control" id="hamburgers"
-                required
+          </div>
+          
+      
+     
+     
+        <div class="form-group row">      
+          <label for="frieten" class="col-sm-2 col-form-label">Kies je frietjes</label>
+          <div class="col-sm-10">
+          <select class="form-control" id="hamburgers"
+                
                 [(ngModel)]="model.friet" name="frieten"
                 #frieten="ngModel"
                 (blur)="updatePrice()"
@@ -54,40 +64,41 @@
         </select>
         
       </div>
+      </div>
 
 
+      <div class="form-group row">      
+        <label for="frieten" class="col-sm-2 col-form-label">Kies een snack</label>
+        <div class="col-sm-10">
+          <select class="form-control" id="snacks"
+          
+          [(ngModel)]="model.snack" name="snacks"
+          #snack="ngModel"
+          (blur)="updatePrice()"
+          >
+    <option *ngFor="let snack of snacks" [ngValue]="snack" >{{snack.name}}</option>
+  </select>
+
+      
+    </div>
     </div>
 
-    <div class="form-row">
-      
-        <div class="form-group col-md-6">
-            <label for="snacks">Select your snacks</label>
-            <select class="form-control" id="snacks"
-                    required
-                    [(ngModel)]="model.snack" name="snacks"
-                    #snack="ngModel"
-                    (blur)="updatePrice()"
-                    >
-              <option *ngFor="let snack of snacks" [ngValue]="snack" >{{snack.name}}</option>
-            </select>
-       
-          </div>
-
-           <div class="form-group col-md-6">
-        <label for="sauces">Select your sauce</label>
+    <div class="form-group row">      
+      <label for="frieten" class="col-sm-2 col-form-label">Kies een sausje</label>
+      <div class="col-sm-10">
         <select class="form-control" id="sauces"
-                required
-                [(ngModel)]="model.sauce" name="sauces"
-                #sauce="ngModel"
-                (blur)="updatePrice()"
-                >
-          <option *ngFor="let sauce of sauces" [ngValue]="sauce" >{{sauce.name}}</option>
-        </select>
-      
-      </div>
+        
+        [(ngModel)]="model.sauce" name="sauces"
+        #sauce="ngModel"
+        (blur)="updatePrice()"
+        >
+  <option *ngFor="let sauce of sauces" [ngValue]="sauce" >{{sauce.name}}</option>
+</select>
+
     
-  
-</div>
+  </div>
+  </div>
+
 
 
 
