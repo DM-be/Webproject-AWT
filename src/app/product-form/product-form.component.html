@@ -1,0 +1,44 @@
+
+{{diagnostic}}
+
+
+
+<div class="container">
+    <h1>productForm</h1>
+    <form (ngSubmit)="onSubmit()" #productForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name"
+              [(ngModel)]="model.name" name="name">
+              TODO: remove this: {{model.name}}
+      </div>
+ 
+      <div class="form-group">
+        <label for="hamburgers">Select your burger</label>
+        <select class="form-control" id="hamburgers"
+                required
+                [(ngModel)]="model.hamburger" name="hamburgers"
+                #hamburger="ngModel"
+                >
+          <option *ngFor="let hamburger of hamburgers" [value]="hamburger.id" >{{hamburger.name}}</option>
+        </select>
+        TODO: remove this: {{model.hamburger.id}}
+      </div>
+
+
+      <div class="form-group">
+        <label for="frieten">Select your french fries</label>
+        <select class="form-control" id="hamburgers"
+                required
+                [(ngModel)]="model.friet" name="frieten"
+                #frieten="ngModel"
+                >
+          <option *ngFor="let friet of fries" [value]="friet.id" >{{friet.name}}</option>
+        </select>
+        TODO: remove this: {{model.hamburger.id}}
+      </div>
+      
+      <button type="button" class="btn btn-success" (click) ="logObject()">Submit</button>
+
+    </form>
+  </div>
