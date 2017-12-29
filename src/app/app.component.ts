@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgbdModalBasicComponent } from './ngbd-modal-basic/ngbd-modal-basic.component';
+
 
 @Component({
   selector: 'app-root',
