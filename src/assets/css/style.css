@@ -1,0 +1,268 @@
+/* ================================= 
+  Base Styles
+==================================== */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Lato', sans-serif;
+  color: #3a3a3a;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1170px;
+}
+
+.button {
+  background: none;
+  height: 50px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  -webkit-transition: background 0.4s;
+  -moz-transition: background 0.4s;
+  transition: background 0.4s;
+}
+
+/* ---- Header ---- */
+#main-header {
+  background: #fff;
+  padding: 0.85em 0;
+}
+#main-header .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+#main-header .logo, #main-header nav a {
+  padding: 10px;
+}
+@media (min-width: 500px) {
+  #main-header .logo, #main-header nav a {
+    padding: 10px 15px;
+  }
+}
+#main-header .logo {
+  font-size: 1.35em;
+  color: #28415E;
+}
+#main-header nav a {
+  font-size: 0.65em;
+  text-transform: uppercase;
+  color: #517fb5;
+}
+@media (min-width: 500px) {
+  #main-header nav a {
+    font-size: 0.95em;
+  }
+}
+
+/* ---- zelf toegevoegd ---- */
+
+h2 {
+    margin: 0;
+    text-align: center;
+}
+
+/* ---- Intro ---- */
+#intro {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7em 0;
+    background-image: url("../images/toonbank.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#intro .top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #28415E;
+}
+#intro .top .splash {
+  display: none;
+}
+@media (min-width: 500px) {
+  #intro .top .splash {
+    display: block;
+    width: 200px;
+  }
+}
+#intro .top img {
+  margin-bottom: 1em;
+}
+#intro .top h1, #intro .top p, #intro .top .button {
+  text-align: center;
+}
+#intro .top h1 {
+  margin: 0;
+}
+#intro .top p {
+  margin-bottom: 1.5em;
+}
+#intro .top .button {
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  box-shadow: inset 0 0 0 2px #B79D55;
+  color: #28415E;
+}
+#intro .top .button:hover, #intro .top .button:focus {
+  background: #B79D55;
+  color: #fff;
+}
+
+/* ---- bottom ---- */
+#bottom {
+  padding-top: 4em;
+}
+#bottom h2 {
+  margin: 0;
+  text-align: center;
+}
+
+
+
+#bottom ul, #bottom ul li, #tours ul li div {
+  display: flex;
+}
+#bottom ul {
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#bottom ul li {
+  background: rgba(0, 0, 0, 0.35);
+  position: relative;
+  flex-direction: column;
+  cursor: pointer;
+  -webkit-transition: background 0.4s;
+  -moz-transition: background 0.4s;
+  transition: background 0.4s;
+}
+#bottom ul li:hover {
+  background: rgba(0, 0, 0, 0);
+}
+@media (min-width: 500px) {
+  #bottom ul li {
+    flex: 50%;
+  }
+}
+@media (min-width: 800px) {
+  #bottom ul li {
+    flex: 25%;
+  }
+}
+#bottom ul li div {
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+}
+#bottom ul li div , #bottom ul li div  {
+  margin: 0;
+}
+#bottom ul li div {
+  margin-bottom: 0.35em;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+#bottom ul li div {
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+#bottom ul li img {
+  position: relative;
+  z-index: -1;
+}
+
+/* ---- Middle container ---- */
+#middle {
+  display: flex;
+  flex-direction: column;
+  padding: 4em 0;
+}
+#middle article {
+  background: #edf4f7;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 0 0.85em 1em;
+  padding: 1em;
+  border-radius: 3px;
+}
+#middle article:last-child {
+  margin-bottom: 0;
+}
+#middle article h3 {
+  color: #28415E;
+}
+#middle article p {
+  margin: 0 0 1em;
+  font-size: 0.95em;
+  line-height: 24px;
+  font-weight: 400;
+}
+#middle article p:last-of-type {
+  margin-bottom: 3em;
+}
+#middle article .button {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  margin-top: auto;
+  padding: 10px 30px;
+  box-shadow: inset 0 0 0 2px #375a82;
+  color: #28415E;
+}
+#middle article .button:hover, #middle article .button:focus {
+  background: #375a82;
+  color: #fff;
+}
+@media (min-width: 800px) {
+  #middle {
+    flex-direction: row;
+  }
+  #middle article {
+    margin-bottom: 0;
+  }
+}
+
+/* ---- Footer ---- */
+#main-footer {
+  background: #d9e4ea;
+  flex: 1;
+  padding: 2em 0;
+  text-align: center;
+}
+
+
