@@ -110,19 +110,26 @@
     
   </div>
   </div>
+<button type="submit" class="btn btn-success" [disabled]="!productForm.form.valid" >Volgende</button>
 
-  <div class="card">
+
+<p style="padding-top: 10px">Illustratie van 2-way databinding:</p>
+  <div class="card ">
       <div class="card-block">
           {{diagnostic}}
       </div>
     </div>
-      <button type="submit" class="btn btn-success" [disabled]="!productForm.form.valid" >Volgende</button>
+    <br>
+  
+      
 
     </form>
   </div>
 
   <div [hidden]="!submitted">
+      <div class="container">
       <h2>Bedankt voor je bestelling {{model.firstName}} ! </h2>
+      <br>
       
       <div class="row">
         <div class="col-sm-2">Bosburger:</div>
@@ -137,14 +144,17 @@
             <div class="col-sm-10">{{model.snack.name}}</div>
           </div>
           <div class="row">
-              <div class="col-sm-2">Sausje</div>
+              <div class="col-sm-2">Sausje:</div>
               <div class="col-sm-10">{{model.sauce.name}}</div>
             </div>
       <br>
       <div class="row">
-          <div class="col-sm-2">Prijs</div>
-          <div class="col-sm-10">{{currentPrice}}</div>
+          <div class="col-sm-2">Prijs:</div>
+          <div class="col-sm-10">€ {{currentPrice}}</div>
         </div>
-      <button class="btn btn-primary" (click)="submitted=false">Ik ben het toch helemaal niet zo zeker...</button>
-      <button class="btn btn-success" >Bevestig bestelling</button>
+        <br>
+      <button class="btn btn-primary" (click)="submitted=false">Ik wil nog iets veranderen!</button>
+      <button class="btn btn-success" (click)="confirmOrder()" >Bevestig bestelling</button>
+      
+    </div>
     </div>

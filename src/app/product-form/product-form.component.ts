@@ -15,7 +15,8 @@ import { SAUCES } from '../mock-sauces';
 })
 
 
-export class ProductFormComponent implements OnInit {
+export class ProductFormComponent {
+
   constructor() {}
   hamburgers = HAMBURGERS;
   fries = FRIES;
@@ -26,16 +27,12 @@ export class ProductFormComponent implements OnInit {
   onSubmit() { this.submitted = true; }
 
   price: number;
-  selectedFries = new Product("none", 0, 0)
-  selectedHamburger = new Product("none", 0, 0)
-  selectedSnack = new Product("none", 0, 0)
-  selectedSauce = new Product("none", 0, 0)
+  selectedFries = new Product("geen", 0, 0)
+  selectedHamburger = new Product("geen", 0, 0)
+  selectedSnack = new Product("geen", 0, 0)
+  selectedSauce = new Product("geen", 0, 0)
   model = new Order("", "", this.selectedHamburger, this.selectedFries, this.selectedSnack, this.selectedSauce);
   
-
-  ngOnInit() {
-
-  }
 
   updatePrice(): void {
     this.price = 0;
@@ -45,13 +42,19 @@ export class ProductFormComponent implements OnInit {
     this.price += this.model.snack.price;
   }
 
-  get diagnostic() {
+  get diagnostic(): string {
     return JSON.stringify(this.model);
 
   }
 
-  get currentPrice() 
+  get currentPrice(): number 
   {
     return this.price;
+  }
+  confirmOrder(): void
+  {
+    alert("uw bestelling is onderweg!")
+    console.log(JSON.stringify(this.model))
+    // send to backend here 
   }
 }
