@@ -1,12 +1,12 @@
 <ng-template #content let-c="close" let-d="dismiss">
-    <div class="modal-body">
-      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+  <div class="modal-body">
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
       <span aria-hidden="true">×</span>
     </button>
-            <app-product-form></app-product-form>    
-<div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+    <app-product-form></app-product-form>
+    <div class="modal-footer">
+   
+    </div>
   </div>
-</div> 
 </ng-template>
-<button class="button" (click)="open(content)">Launch demo modal</button>
+<span (click)="open(content)"><span>Bestel nu!</span></span>

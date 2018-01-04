@@ -14,7 +14,12 @@
           <div class="col-sm-10">
           <input type="text" class="form-control" id="firstName"
                 required
-                [(ngModel)]="model.firstName" name="name">
+                [(ngModel)]="model.firstName" name="firstName"
+                #firstName="ngModel">
+                <div [hidden]="firstName.valid || firstName.pristine"
+                class="alert alert-danger">
+             We hebben je voornaam nodig!
+              </div>
             </div>
       </div>     
 
@@ -25,7 +30,13 @@
             <div class="col-sm-10">
             <input type="text" class="form-control" id="name"
                   required
-                  [(ngModel)]="model.lastName" name="name">
+                  [(ngModel)]="model.lastName" name="lastName"
+                  #lastName="ngModel">
+                  <div [hidden]="lastName.valid || lastName.pristine"
+                
+                  class="alert alert-danger">
+               We hebben je achternaam nodig!
+                </div>
             </div>
 
         </div>     
@@ -99,10 +110,11 @@
   </div>
   </div>
 
+  <div class="panel panel-default">
+    <div class="panel-body">Look, I'm in a panel!</div>
+</div>
 
-
-  
-      <button type="button" class="btn btn-success" (click) ="logObject()">Bestel nu!</button>
+      <button type="button" class="btn btn-success" (click) ="finishOrder()">Bestel nu!</button>
 
     </form>
   </div>
