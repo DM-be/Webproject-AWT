@@ -2,8 +2,10 @@ import { Product }  from './product'
 
 export const SAUCES: Product[] = [
   
-    { name: "mayonaise", id: 1, price: 0.50},
-    { name: "ketcup", id: 2, price: 0.50},
+    { name: "Mayonaise", id: 1, price: 0.50},
+    { name: "Ketchup", id: 2, price: 0.50},
+    { name: "Bosspecial", id: 3, price: 0.50},
+    { name: "Truffel", id: 3, price: 0.50},
 
   
 ]

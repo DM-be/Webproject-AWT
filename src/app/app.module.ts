@@ -17,6 +17,7 @@ import { NgbdModalBasicComponent } from './ngbd-modal-basic/ngbd-modal-basic.com
     AppComponent,
     ProductFormComponent,
     NgbdModalBasicComponent
+    
   ],
   imports: [
     BrowserModule,

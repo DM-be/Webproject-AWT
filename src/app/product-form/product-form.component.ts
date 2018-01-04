@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { Product } from '../product';
 import { Order } from '../order';
 import { HAMBURGERS } from '../mock-hamburgers';
@@ -12,12 +13,17 @@ import { SAUCES } from '../mock-sauces';
   templateUrl: './product-form.component.html',
   styleUrls: ['./product-form.component.css']
 })
-export class ProductFormComponent implements OnInit {
 
+
+export class ProductFormComponent implements OnInit {
+  constructor() {}
   hamburgers = HAMBURGERS;
   fries = FRIES;
   snacks = SNACKS;
   sauces = SAUCES;
+
+  submitted = false;
+  onSubmit() { this.submitted = true; }
 
   price: number;
   selectedFries = new Product("none", 0, 0)
@@ -25,7 +31,7 @@ export class ProductFormComponent implements OnInit {
   selectedSnack = new Product("none", 0, 0)
   selectedSauce = new Product("none", 0, 0)
   model = new Order("", "", this.selectedHamburger, this.selectedFries, this.selectedSnack, this.selectedSauce);
-  constructor() {}
+  
 
   ngOnInit() {
 
@@ -35,13 +41,17 @@ export class ProductFormComponent implements OnInit {
     this.price = 0;
     this.price += this.model.hamburger.price
     this.price += this.model.friet.price;
-  }
-
-  logObject() {
+    this.price += this.model.sauce.price;
+    this.price += this.model.snack.price;
   }
 
   get diagnostic() {
     return JSON.stringify(this.model);
-    
+
+  }
+
+  get currentPrice() 
+  {
+    return this.price;
   }
 }

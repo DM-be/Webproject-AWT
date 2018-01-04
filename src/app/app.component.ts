@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgbdModalBasicComponent } from './ngbd-modal-basic/ngbd-modal-basic.component';
 
 
