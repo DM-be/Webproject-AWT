@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css");
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css");
+@import url("assets/css/style.css");
+@import url("//fonts.googleapis.com/css?family=Nunito");
+@import url("assets/css/forms.css");
