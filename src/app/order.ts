@@ -9,6 +9,7 @@ export class Order {
         public friet: Product,
         public snack: Product,
         public sauce: Product,
+        public totalPrice: number
         ) {
 
 

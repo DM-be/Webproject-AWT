@@ -24,15 +24,14 @@ export class ProductFormComponent {
   sauces = SAUCES;
 
   submitted = false;
-  onSubmit() { this.submitted = true; }
+  onSubmit(): void { this.submitted = true; }
 
   price: number;
   selectedFries = new Product("geen", 0, 0)
   selectedHamburger = new Product("geen", 0, 0)
   selectedSnack = new Product("geen", 0, 0)
   selectedSauce = new Product("geen", 0, 0)
-  model = new Order("", "", this.selectedHamburger, this.selectedFries, this.selectedSnack, this.selectedSauce);
-  
+  model = new Order("", "", this.selectedHamburger, this.selectedFries, this.selectedSnack, this.selectedSauce,0);
 
   updatePrice(): void {
     this.price = 0;
@@ -40,21 +39,25 @@ export class ProductFormComponent {
     this.price += this.model.friet.price;
     this.price += this.model.sauce.price;
     this.price += this.model.snack.price;
-  }
+    this.model.totalPrice = this.price
+    
 
+  }
   get diagnostic(): string {
     return JSON.stringify(this.model);
 
   }
-
   get currentPrice(): number 
   {
     return this.price;
   }
   confirmOrder(): void
   {
-    alert("uw bestelling is onderweg!")
+    alert("uw bestelling is onderweg! zie console log voor de verzonden data" )
+    document.querySelector('#closeButton').click(); 
     console.log(JSON.stringify(this.model))
     // send to backend here 
   }
+
+  
 }
