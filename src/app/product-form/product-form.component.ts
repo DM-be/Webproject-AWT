@@ -22,34 +22,20 @@ export class ProductFormComponent {
   fries = FRIES;
   snacks = SNACKS;
   sauces = SAUCES;
-
   submitted = false;
   onSubmit(): void { this.submitted = true; }
-
-  price: number;
   selectedFries = new Product("geen", 0, 0)
   selectedHamburger = new Product("geen", 0, 0)
   selectedSnack = new Product("geen", 0, 0)
   selectedSauce = new Product("geen", 0, 0)
   model = new Order("", "", this.selectedHamburger, this.selectedFries, this.selectedSnack, this.selectedSauce,0);
-
-  updatePrice(): void {
-    this.price = 0;
-    this.price += this.model.hamburger.price
-    this.price += this.model.friet.price;
-    this.price += this.model.sauce.price;
-    this.price += this.model.snack.price;
-    this.model.totalPrice = this.price
-    
-
-  }
   get diagnostic(): string {
     return JSON.stringify(this.model);
-
   }
-  get currentPrice(): number 
+  get totalPrice(): number
   {
-    return this.price;
+    return this.model.getTotalPrice();
+
   }
   confirmOrder(): void
   {

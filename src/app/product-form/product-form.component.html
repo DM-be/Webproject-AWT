@@ -51,7 +51,7 @@
                 
                 [(ngModel)]="model.hamburger" name="hamburgers"
                 #hamburger="ngModel"
-                (blur)="updatePrice()"
+                (blur)="totalPrice()"
                 >
             <option *ngFor="let hamburger of hamburgers" [ngValue]="hamburger"  >{{hamburger.name}}</option>
             </select>
@@ -70,7 +70,7 @@
                 
                 [(ngModel)]="model.friet" name="frieten"
                 #frieten="ngModel"
-                (blur)="updatePrice()"
+                (blur)="totalPrice()"
                 >
           <option *ngFor="let friet of fries" [ngValue]="friet" >{{friet.name}}</option>
         </select>
@@ -86,7 +86,7 @@
           
           [(ngModel)]="model.snack" name="snacks"
           #snack="ngModel"
-          (blur)="updatePrice()"
+          (blur)="totalPrice()"
           >
     <option *ngFor="let snack of snacks" [ngValue]="snack" >{{snack.name}}</option>
   </select>
@@ -102,7 +102,7 @@
         
         [(ngModel)]="model.sauce" name="sauces"
         #sauce="ngModel"
-        (blur)="updatePrice()"
+        (blur)="totalPrice()"
         >
   <option *ngFor="let sauce of sauces" [ngValue]="sauce" >{{sauce.name}}</option>
 </select>
@@ -150,7 +150,7 @@
       <br>
       <div class="row">
           <div class="col-sm-2">Prijs:</div>
-          <div class="col-sm-10">€ {{currentPrice}}</div>
+          <div class="col-sm-10">€ {{totalPrice}}</div>
         </div>
         <br>
       <button class="btn btn-primary" (click)="submitted=false">Ik wil nog iets veranderen!</button>
