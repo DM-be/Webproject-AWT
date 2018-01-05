@@ -11,12 +11,15 @@ export class Order {
         public sauce: Product,
         public totalPrice: number
         ) {}
-        getTotalPrice(): number 
+        updatePrice(): void
         {
             let total = this.friet.price + this.hamburger.price + this.snack.price + this.sauce.price
             this.totalPrice = total
+            
+        }
+        getTotalPrice(): number
+        {
             return this.totalPrice
-
         }
 
 }

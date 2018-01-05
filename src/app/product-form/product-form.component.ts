@@ -32,11 +32,12 @@ export class ProductFormComponent {
   get diagnostic(): string {
     return JSON.stringify(this.model);
   }
-  get totalPrice(): number
+  updatePrice(): void
   {
-    return this.model.getTotalPrice();
+    this.model.updatePrice();
 
   }
+
   confirmOrder(): void
   {
     alert("uw bestelling is onderweg! zie console log voor de verzonden data" )
@@ -44,6 +45,8 @@ export class ProductFormComponent {
     console.log(JSON.stringify(this.model))
     // send to backend here 
   }
+
+
 
   
 }
