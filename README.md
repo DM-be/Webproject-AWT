@@ -1,11 +1,11 @@
-#Installatie
+# Installatie
 
 Installeer de angular cli door middel van: `npm  install -g @angular/cli`.
 Run het commando: `npm install` om de node_modules te installeren die nodig zijn voor het project.
 Run het commando: `ng serve`.
 De applicatie is beschikbaar op: `http://localhost:4200/`.
 
-#Implementatie van features
+# Implementatie van features
 
 * light: volledige layout in flexbox
 * light: transitions
