@@ -180,7 +180,6 @@ h2 {
   background: rgba(0, 0, 0, 0.35);
   position: relative;
   flex-direction: column;
-  cursor: pointer;
   -webkit-transition: background 0.4s;
   -moz-transition: background 0.4s;
   transition: background 0.4s;

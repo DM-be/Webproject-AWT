@@ -1,20 +1,21 @@
-# installatie
+#Installatie
 
-installeer de angular cli door middel van: `npm  install -g @angular/cli`
-run het commando: `npm install` om de dependencies te installeren
-gebruik `ng serve --open` om daarna te navigeren naar `http://localhost:4200/` waar de applicatie runt.
+Installeer de angular cli door middel van: `npm  install -g @angular/cli`.
+Run het commando: `npm install` om de node_modules te installeren die nodig zijn voor het project.
+Run het commando: `ng serve`.
+De applicatie is beschikbaar op: `http://localhost:4200/`.
 
-#implementatie van features
-* light: flexbox
+#Implementatie van features
+
+* light: volledige layout in flexbox
 * light: transitions
     * transitions op a met class button
-    * transitions op images
-* light: css grid (door middel van bootstrap)
+    * transitions op images onderaan
+* light: css grid (gebruikt voor form met behulp van Bootstrap)
 * heavy: Typescript
-    * componenten in Angular geschreven in Typescript
-    * 2-way data binding: de UI data wordt rechtstreeks doorgegeven aan het achterliggende model
+    * functionaliteit gemaakt in Angular, met behulp van Typescript
+        * modal component in Bootstrap bevat een demo product form 
+        * product form met daarbij 2-way data binding
+            * alle nodige classes geschreven in Typescript (Product, Order)
+            * 2-way data binding: data ingegeven in het formulier wordt rechtstreeks doorgegeven aan het             achterliggende model
     
-        
-    
-
-

@@ -1,162 +1,127 @@
-
-
-
-
-
 <div class="container" [hidden]="submitted">
-    <h1>Bosrand Special menu</h1>
-    <p>Kies hier je exclusief online menu!</p>
-    <form (ngSubmit)="onSubmit()" #productForm="ngForm">
+  <h1>Bosrand Special menu</h1>
+  <p>Kies hier je exclusief online menu!</p>
+  <form (ngSubmit)="onSubmit()" #productForm="ngForm">
 
-      <div class="form-group row">
-      
-      
-          <label for="firstName" class="col-sm-2 col-form-label">Voornaam</label>
-          <div class="col-sm-10">
-          <input type="text" class="form-control" id="firstName"
-                required
-                [(ngModel)]="model.firstName" name="firstName"
-                #firstName="ngModel">
-                <div [hidden]="firstName.valid || firstName.pristine"
-                class="alert alert-danger">
-             We hebben je voornaam nodig!
-              </div>
-            </div>
-      </div>     
+    <div class="form-group row">
 
-      <div class="form-group row">
-        
-        
-            <label for="lastName" class="col-sm-2 col-form-label">Achternaam</label>
-            <div class="col-sm-10">
-            <input type="text" class="form-control" id="name"
-                  required
-                  [(ngModel)]="model.lastName" name="lastName"
-                  #lastName="ngModel">
-                  <div [hidden]="lastName.valid || lastName.pristine"
-                
-                  class="alert alert-danger">
-               We hebben je achternaam nodig!
-                </div>
-            </div>
 
-        </div>     
-  
-        <div class="form-group row">
-          
-          
-              <label for="hamburgers" class="col-sm-2 col-form-label">Kies je bosburger</label>
-              <div class="col-sm-10">
-                <select class="form-control" id="hamburgers"
-                
-                [(ngModel)]="model.hamburger" name="hamburgers"
-                #hamburger="ngModel"
-                (blur)="updatePrice()"
-                >
+      <label for="firstName" class="col-sm-2 col-form-label">Voornaam</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="firstName" required [(ngModel)]="model.firstName" name="firstName" #firstName="ngModel">
+        <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">
+          We hebben je voornaam nodig!
+        </div>
+      </div>
+    </div>
 
-            <option *ngFor="let hamburger of hamburgers" [ngValue]="hamburger"  >{{hamburger.name}}</option>
-            </select>
-  
-          </div>     
+    <div class="form-group row">
 
-          </div>
-          
-      
-     
-     
-        <div class="form-group row">      
-          <label for="frieten" class="col-sm-2 col-form-label">Kies je frietjes</label>
-          <div class="col-sm-10">
-          <select class="form-control" id="hamburgers"
-                
-                [(ngModel)]="model.friet" name="frieten"
-                #frieten="ngModel"
-                (blur)="updatePrice()"
-                >
-          <option *ngFor="let friet of fries" [ngValue]="friet" >{{friet.name}}</option>
+
+      <label for="lastName" class="col-sm-2 col-form-label">Achternaam</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="name" required [(ngModel)]="model.lastName" name="lastName" #lastName="ngModel">
+        <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger">
+          We hebben je achternaam nodig!
+        </div>
+      </div>
+
+    </div>
+
+    <div class="form-group row">
+
+
+      <label for="hamburgers" class="col-sm-2 col-form-label">Kies je bosburger</label>
+      <div class="col-sm-10">
+        <select class="form-control" id="hamburgers" [(ngModel)]="model.hamburger" name="hamburgers" #hamburger="ngModel" (blur)="updatePrice()">
+
+          <option *ngFor="let hamburger of hamburgers" [ngValue]="hamburger">{{hamburger.name}}</option>
         </select>
-        
+
       </div>
-      </div>
 
-
-      <div class="form-group row">      
-        <label for="frieten" class="col-sm-2 col-form-label">Kies een snack</label>
-        <div class="col-sm-10">
-          <select class="form-control" id="snacks"
-          
-          [(ngModel)]="model.snack" name="snacks"
-          #snack="ngModel"
-          (blur)="updatePrice()"
-          >
-    <option *ngFor="let snack of snacks" [ngValue]="snack" >{{snack.name}}</option>
-  </select>
-
-      
-    </div>
     </div>
 
-    <div class="form-group row">      
+
+
+
+    <div class="form-group row">
+      <label for="frieten" class="col-sm-2 col-form-label">Kies je frietjes</label>
+      <div class="col-sm-10">
+        <select class="form-control" id="hamburgers" [(ngModel)]="model.friet" name="frieten" #frieten="ngModel" (blur)="updatePrice()">
+          <option *ngFor="let friet of fries" [ngValue]="friet">{{friet.name}}</option>
+        </select>
+
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+      <label for="frieten" class="col-sm-2 col-form-label">Kies een snack</label>
+      <div class="col-sm-10">
+        <select class="form-control" id="snacks" [(ngModel)]="model.snack" name="snacks" #snack="ngModel" (blur)="updatePrice()">
+          <option *ngFor="let snack of snacks" [ngValue]="snack">{{snack.name}}</option>
+        </select>
+
+
+      </div>
+    </div>
+
+    <div class="form-group row">
       <label for="frieten" class="col-sm-2 col-form-label">Kies een sausje</label>
       <div class="col-sm-10">
-        <select class="form-control" id="sauces"
-        
-        [(ngModel)]="model.sauce" name="sauces"
-        #sauce="ngModel"
-        (blur)="updatePrice()"
-        
-        >
-  <option *ngFor="let sauce of sauces" [ngValue]="sauce" >{{sauce.name}}</option>
-</select>
-
-    
-  </div>
-  </div>
-<button type="submit" class="btn btn-success" [disabled]="!productForm.form.valid" >Volgende</button>
+        <select class="form-control" id="sauces" [(ngModel)]="model.sauce" name="sauces" #sauce="ngModel" (blur)="updatePrice()">
+          <option *ngFor="let sauce of sauces" [ngValue]="sauce">{{sauce.name}}</option>
+        </select>
 
 
-<p style="padding-top: 10px">Illustratie van 2-way databinding:</p>
-  <div class="card ">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!productForm.form.valid">Volgende</button>
+
+
+    <p style="padding-top: 10px">Illustratie van 2-way databinding:</p>
+    <div class="card ">
       <div class="card-block">
-          {{diagnostic}}
+        {{diagnostic}}
       </div>
     </div>
     <br>
-  
-      
 
-    </form>
+
+
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <div class="container">
+    <h2>Bedankt voor je bestelling {{model.firstName}} ! </h2>
+    <br>
+
+    <div class="row">
+      <div class="col-sm-2">Bosburger:</div>
+      <div class="col-sm-10">{{model.hamburger.name}}</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2">Frietjes:</div>
+      <div class="col-sm-10">{{model.friet.name}}</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2">Snack:</div>
+      <div class="col-sm-10">{{model.snack.name}}</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2">Sausje:</div>
+      <div class="col-sm-10">{{model.sauce.name}}</div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-2">Prijs:</div>
+      <div class="col-sm-10">€{{model.getTotalPrice()}}</div>
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="submitted=false">Ik wil nog iets veranderen!</button>
+    <button class="btn btn-success" (click)="confirmOrder()">Bevestig bestelling</button>
+
   </div>
-
-  <div [hidden]="!submitted">
-      <div class="container">
-      <h2>Bedankt voor je bestelling {{model.firstName}} ! </h2>
-      <br>
-      
-      <div class="row">
-        <div class="col-sm-2">Bosburger:</div>
-        <div class="col-sm-10">{{model.hamburger.name}}</div>
-      </div>
-      <div class="row">
-          <div class="col-sm-2">Frietjes:</div>
-          <div class="col-sm-10">{{model.friet.name}}</div>
-        </div>
-        <div class="row">
-            <div class="col-sm-2">Snack:</div>
-            <div class="col-sm-10">{{model.snack.name}}</div>
-          </div>
-          <div class="row">
-              <div class="col-sm-2">Sausje:</div>
-              <div class="col-sm-10">{{model.sauce.name}}</div>
-            </div>
-      <br>
-      <div class="row">
-          <div class="col-sm-2">Prijs:</div>
-          <div class="col-sm-10">{{model.getTotalPrice()}}</div>
-        </div>
-        <br>
-      <button class="btn btn-primary" (click)="submitted=false">Ik wil nog iets veranderen!</button>
-      <button class="btn btn-success" (click)="confirmOrder()" >Bevestig bestelling</button>
-      
-    </div>
-    </div>
+</div>
