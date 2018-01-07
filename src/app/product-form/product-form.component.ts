@@ -41,7 +41,7 @@ export class ProductFormComponent {
   confirmOrder(): void
   {
     alert("uw bestelling is onderweg! zie console log voor de verzonden data" )
-    document.querySelector('#closeButton').click(); 
+    document.getElementById("closeButton").click();
     console.log(JSON.stringify(this.model))
     // send to backend here 
   }

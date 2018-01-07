@@ -38,7 +38,6 @@ a:hover {
   padding: 0.85em 0;
 }
 
-
 #main-header .container {
   display: flex;
   flex-direction: row;
@@ -55,19 +54,18 @@ a:hover {
 }
 #main-header .org {
   font-size: 1.35em;
-  color: #28415E;
+  color: #3a3a3a;
 }
 #main-header nav a {
   font-size: 0.65em;
   text-transform: uppercase;
-  color: #517fb5;
+  color: #3a3a3a;
 }
 @media (min-width: 500px) {
   #main-header nav a {
     font-size: 0.95em;
   }
 }
-
 
 /* Intro  */
 #intro {
@@ -76,9 +74,11 @@ a:hover {
   justify-content: center;
   align-items: center;
   padding: 7em 0;
-    background-image: url("../images/toonbank.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url("../images/toonbank.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 500px;
+    
 }
 #intro .top {
   display: flex;
@@ -104,27 +104,13 @@ a:hover {
   margin: 0;
   font-size: 3.5em;
 }
-
-#intro .top .button {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  padding: 10px 30px;
-  box-shadow: inset 0 0 0 2px #375a82;
-  color: #28415E
-}
-#intro .top .button:hover {
-  background:  #375a82;
-  color: #fff;
-}
-
-/* Middle */
-
 h2 {
   
   text-align: center;
   padding-top: 2em
 }
+
+/* Middle */
 
 #middle {
   display: flex;
@@ -132,7 +118,7 @@ h2 {
   padding: 4em 0;
 }
 #middle article {
-  background: #edf4f7;
+  background: #e8f5e9 ;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -143,9 +129,7 @@ h2 {
 #middle article:last-child {
   margin-bottom: 0;
 }
-#middle article h3 {
-  color: #28415E;
-}
+
 #middle article p {
   margin: 0 0 1em;
   font-size: 0.95em;
@@ -161,11 +145,12 @@ h2 {
   align-self: center;
   margin-top: auto;
   padding: 10px 30px;
-  box-shadow: inset 0 0 0 2px #375a82;
-  color: #28415E;
+  box-shadow: inset 0 0 0 2px #66bb6a;
+  color: #3a3a3a;
+
 }
 #middle article .button:hover {
-  background: #375a82;
+  background: #66bb6a;
   color: #fff;
 }
 @media (min-width: 800px) {
@@ -224,24 +209,16 @@ h2 {
   text-align: center;
   color: #fff;
 }
-#bottom ul li div , #bottom ul li div  {
-  margin: 0;
-}
-
 
 #bottom ul li img {
   position: relative;
   z-index: -1;
 }
 
-
-
 /* Footer */
 #main-footer {
-  background: #d9e4ea;
+  background: #e8f5e9;
   flex: 1;
   padding: 2em 0;
   text-align: center;
 }
-
-
